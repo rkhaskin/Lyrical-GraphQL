@@ -4,7 +4,7 @@ import { graphql } from 'react-apollo';
 import SongCreate from './SongCreate';
 import { Link } from 'react-router';
 import query from '../queries/fetchSongs';
-//import mutation from '../queries/deleteSong';
+import mutation from '../queries/deleteSong';
 
 class SongList extends Component {
 
@@ -46,13 +46,6 @@ class SongList extends Component {
     }
 }
 
-const mutation = gql`
-mutation DeleteSong($id: ID){
-    deleteSong(id: $id) {
-      id
-    }
-  }
-`;
 
 export default graphql(mutation)(
     graphql(query)(SongList)
